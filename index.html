@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">awesomesevice</a>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li class="active"><a href="#">Become a member</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Go Big or Go Home</h1>
+    </section>
+
+    <div class="overlay">
+        <div class="left">
+            <h2>It's so easy</h2>
+            <p class="subhead">You have two options</p>
+
+            <div class="cards">
+                <div class="card">
+                    <strong>Suscribe for $9 per  month</strong>
+                    <p>This is the most popular across our members. Join now, and cancle at any time</p>
+                    <a href="#" class="cta">Subcribe Now</a>
+                </div>
+
+                <div class="card">
+                    <strong>Suscribe for $99 once</strong>
+                    <p>This is the most popular across our members. Join now, and cancle at any time</p>
+                    <a href="#" class="cta pay-once">Pay Once</a>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <ul class="secondary">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="social-nav">
+                <a href="#" class="twitter">
+                    <img src="assets/Img/svg/icons8-twitter-circled.svg" width="32" height="32" fill="none"></img>
+                </a>
+                <a href="#" class="facebook">
+                    <img src="assets/Img/svg/icons8-facebook.svg" width="32" height="32" fill="none"></img>
+                </a>
+            </div>
+        </div>
+        <div class="right">
+            <a href="#" class="exit">
+                <img src="assets/Img/svg/High-contrast-dialog-close.svg" width="32" height="32" fill="none"></img>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        
+        let open = document.querySelector('.active');
+        let close = document.querySelector('.exit');
+        let tl = gsap.timeline();
+
+        tl.to('.overlay', {opacity: 1, x:0, scale:1, pointerEvents: 'auto', duration: .3})
+        tl.pause();
+
+        open.addEventlistener("click", () => {
+            tl.play();
+        })
+
+        close.addEventlistener('click', () => {
+            tl.reverse();
+        })
+    </script>
+</body>
+</html>
